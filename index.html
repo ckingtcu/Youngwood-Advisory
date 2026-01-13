@@ -1,1 +1,227 @@
-index.html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Youngwood Advisory | Consulting</title>
+  <meta name="description" content="Youngwood Advisory provides strategic consulting for operators, investors, and leadership teams." />
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.70);
+      --line: rgba(255,255,255,0.14);
+      --accent: #7dd3fc;
+      --accent2: #a78bfa;
+      --radius: 18px;
+      --shadow: 0 18px 55px rgba(0,0,0,0.45);
+      --max: 1100px;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(11,18,32,0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: var(--max);
+      margin: auto;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #0b1220;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: auto;
+      padding: 60px 18px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.1;
+      margin: 16px 0;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .features {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    .feature {
+      padding: 16px;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .card {
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    form {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,0.25);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    textarea { min-height: 120px; }
+
+    button {
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      font-weight: 700;
+      cursor: pointer;
+      color: #0b1220;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: auto;
+      padding: 40px 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">YA</div>
+      <strong>Youngwood Advisory</strong>
+    </div>
+    <a href="#contact"><strong>Contact</strong></a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h1>Clear strategy.<br/>Tight execution.<br/>Measurable results.</h1>
+    <p>
+      Youngwood Advisory partners with founders, operators, and investors to bring clarity,
+      financial rigor, and disciplined execution to high-impact decisions.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <strong>Strategic Advisory</strong>
+        <p>Business strategy, positioning, and prioritization.</p>
+      </div>
+      <div class="feature">
+        <strong>Financial Modeling</strong>
+        <p>Forecasting, scenario analysis, and KPI design.</p>
+      </div>
+      <div class="feature">
+        <strong>Execution Support</strong>
+        <p>Operating cadence, accountability, and delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <aside class="card" id="contact">
+    <div class="card-header">
+      <strong>Start an inquiry</strong>
+      <p>We’ll respond promptly.</p>
+    </div>
+
+    <!-- Replace the action URL with your Formspree endpoint -->
+    <form action="https://formspree.io/f/yourFormId" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Email address" required />
+      <input type="text" name="company" placeholder="Company (optional)" />
+      <textarea name="message" placeholder="How can we help?" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </aside>
+</main>
+
+<footer>
+  <div>© <span id="year"></span> Youngwood Advisory</div>
+  <div>Confidential • Independent • Advisory</div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
