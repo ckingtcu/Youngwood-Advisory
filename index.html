@@ -22,6 +22,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html, body {
       margin: 0;
       font-family: var(--font);
@@ -31,6 +32,7 @@
 
     a { color: inherit; text-decoration: none; }
 
+    /* ================= HEADER ================= */
     header {
       position: sticky;
       top: 0;
@@ -45,36 +47,35 @@
       margin: auto;
       padding: 14px 18px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 14px;
     }
 
-    /* Brand + logo (logo only, no words) */
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
     }
 
+    /* AGGRESSIVELY CONSTRAINED LOGO */
     .logo {
       width: 40px;
       height: 40px;
       border-radius: 10px;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
 
     .logo-img {
-      width: 100%;
-      height: 100%;
+      width: 40px !important;
+      height: 40px !important;
+      max-width: 40px !important;
+      max-height: 40px !important;
       object-fit: contain;
       display: block;
     }
 
-    /* Main layout */
+    /* ================= MAIN LAYOUT ================= */
     main {
       max-width: var(--max);
       margin: auto;
@@ -115,6 +116,7 @@
       border: 1px solid var(--line);
     }
 
+    /* ================= CARD / FORM ================= */
     .card {
       border-radius: var(--radius);
       background: var(--panel);
@@ -143,7 +145,9 @@
       font-size: 14px;
     }
 
-    textarea { min-height: 120px; }
+    textarea {
+      min-height: 120px;
+    }
 
     button {
       padding: 12px;
@@ -155,6 +159,7 @@
       color: #0b1220;
     }
 
+    /* ================= FOOTER ================= */
     footer {
       max-width: var(--max);
       margin: auto;
@@ -176,10 +181,9 @@
   <div class="nav">
     <div class="brand">
       <div class="logo">
-        <div style="width:40px;height:40px;border-radius:10px;background:#7dd3fc;"></div>
+        <img src="logo.png" alt="Youngwood Advisory logo" class="logo-img" />
       </div>
     </div>
-    <a href="#contact"><strong>Contact</strong></a>
   </div>
 </header>
 
