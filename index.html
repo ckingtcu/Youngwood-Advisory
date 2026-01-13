@@ -172,4 +172,65 @@
 
 <body>
 
-<head
+<header>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">
+        <img src="logo.png" alt="Youngwood Advisory logo" class="logo-img" />
+      </div>
+    </div>
+    <a href="#contact"><strong>Contact</strong></a>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h1>Clear strategy.<br/>Tight execution.<br/>Measurable results.</h1>
+    <p>
+      Youngwood Advisory partners with founders, operators, and investors to bring clarity,
+      financial rigor, and disciplined execution to high-impact decisions.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <strong>Strategic Advisory</strong>
+        <p>Business strategy, positioning, and prioritization.</p>
+      </div>
+      <div class="feature">
+        <strong>Financial Modeling</strong>
+        <p>Forecasting, scenario analysis, and KPI design.</p>
+      </div>
+      <div class="feature">
+        <strong>Execution Support</strong>
+        <p>Operating cadence, accountability, and delivery.</p>
+      </div>
+    </div>
+  </section>
+
+  <aside class="card" id="contact">
+    <div class="card-header">
+      <strong>Start an inquiry</strong>
+      <p>We’ll respond promptly.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xqeekogj" method="POST">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Email address" required />
+      <input type="text" name="company" placeholder="Company (optional)" />
+      <textarea name="message" placeholder="How can we help?" required></textarea>
+      <button type="submit">Send Inquiry</button>
+    </form>
+  </aside>
+</main>
+
+<footer>
+  <div>© <span id="year"></span> Youngwood Advisory</div>
+  <div>Confidential • Independent • Advisory</div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
