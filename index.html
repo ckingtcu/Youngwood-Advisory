@@ -20,9 +20,9 @@
       --max: 1100px;
       --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 
-      /* THIS controls how big the logo FEELS */
-      --logoBox: 64px;
-      --logoZoom: 3.2;
+      /* LOGO CONTROLS (tweak only these if needed) */
+      --logoBox: 60px;      /* size of the header logo container */
+      --logoScale: 2.2;     /* zoom inside the padded PNG, still shows full mark */
     }
 
     * { box-sizing: border-box; }
@@ -33,6 +33,8 @@
       background: var(--bg);
       color: var(--text);
     }
+
+    a { color: inherit; text-decoration: none; }
 
     /* HEADER */
     header {
@@ -47,12 +49,12 @@
     .nav {
       max-width: var(--max);
       margin: auto;
-      padding: 18px;
+      padding: 16px 18px;
       display: flex;
       align-items: center;
     }
 
-    /* LOGO CONTAINER */
+    /* LOGO */
     .logo {
       width: var(--logoBox);
       height: var(--logoBox);
@@ -61,26 +63,33 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background: transparent;
     }
 
     /*
-      IMPORTANT:
-      - width/height are LOCKED so it can never blow up the page
-      - object-fit: cover crops the huge transparent canvas
-      - scale() zooms into the actual mark
+      KEY FIX:
+      - contain = show the whole mark (no cropping)
+      - scale() enlarges the mark within the PNG’s empty canvas
+      - width/height are locked so it can’t blow up the page
     */
-    .logo img {
+    .logo-img {
       width: var(--logoBox) !important;
       height: var(--logoBox) !important;
       max-width: var(--logoBox) !important;
       max-height: var(--logoBox) !important;
-      object-fit: cover;
-      transform: scale(var(--logoZoom));
-      transform-origin: center;
+      object-fit: contain;
+      object-position: center;
       display: block;
+      transform: scale(var(--logoScale));
+      transform-origin: center;
     }
 
-    /* MAIN */
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr !important; }
+      :root { --logoBox: 54px; --logoScale: 2.0; }
+    }
+
+    /* MAIN LAYOUT */
     main {
       max-width: var(--max);
       margin: auto;
@@ -88,14 +97,6 @@
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 32px;
-    }
-
-    @media (max-width: 900px) {
-      main { grid-template-columns: 1fr; }
-      :root {
-        --logoBox: 56px;
-        --logoZoom: 2.8;
-      }
     }
 
     h1 {
@@ -183,7 +184,7 @@
 <header>
   <div class="nav">
     <div class="logo">
-      <img src="logo.png" alt="Youngwood Advisory logo" />
+      <img src="logo.png" alt="Youngwood Advisory logo" class="logo-img" />
     </div>
   </div>
 </header>
@@ -212,7 +213,7 @@
     </div>
   </section>
 
-  <aside class="card">
+  <aside class="card" id="contact">
     <div class="card-header">
       <strong>Start an inquiry</strong>
       <p>We’ll respond promptly.</p>
