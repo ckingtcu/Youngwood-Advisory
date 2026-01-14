@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Youngwood Advisory | Consulting</title>
-  <meta name="description" content="Youngwood Advisory provides strategic consulting for operators, investors, and leadership teams." />
+
+  <!-- Primary SEO -->
+  <title>The Youngwood Group | Strategic Advisory</title>
+  <meta name="description" content="The Youngwood Group advises boards, founders, operators, and investors on strategy, financial decision-making, and execution." />
+  <link rel="canonical" href="https://youngwoodgroup.com/" />
+
+  <!-- Open Graph (LinkedIn / iMessage / Slack) -->
+  <meta property="og:title" content="The Youngwood Group | Strategic Advisory" />
+  <meta property="og:description" content="The Youngwood Group advises boards, founders, operators, and investors on strategy, financial decision-making, and execution." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youngwoodgroup.com/" />
+  <meta property="og:image" content="https://youngwoodgroup.com/logo.png" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Youngwood Group | Strategic Advisory" />
+  <meta name="twitter:description" content="The Youngwood Group advises boards, founders, operators, and investors on strategy, financial decision-making, and execution." />
+  <meta name="twitter:image" content="https://youngwoodgroup.com/logo.png" />
 
   <style>
     :root {
@@ -20,8 +36,8 @@
       --max: 1100px;
       --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 
-      /* LOGO SIZE: change this only */
-      --logoH: 64px;
+      /* Logo height (keeps full logo visible) */
+      --logoH: 72px;
     }
 
     * { box-sizing: border-box; }
@@ -50,16 +66,15 @@
       padding: 18px 18px;
       display: flex;
       align-items: center;
-      min-height: calc(var(--logoH) + 36px); /* ensures header is always tall enough */
+      min-height: calc(var(--logoH) + 36px);
     }
 
-    /* IMPORTANT: no overflow hidden, no forced square */
     .logo {
       display: flex;
       align-items: center;
     }
 
-    /* Keep aspect ratio. No cropping. No zoom. */
+    /* Keep aspect ratio. No cropping. */
     .logo-img {
       height: var(--logoH);
       width: auto;
@@ -68,7 +83,7 @@
     }
 
     @media (max-width: 900px) {
-      :root { --logoH: 56px; }
+      :root { --logoH: 60px; }
       main { grid-template-columns: 1fr !important; }
       .nav { min-height: calc(var(--logoH) + 28px); }
     }
@@ -167,38 +182,42 @@
 <header>
   <div class="nav">
     <div class="logo">
-      <img src="logo.png" alt="Youngwood Advisory logo" class="logo-img" />
+      <img src="logo.png" alt="The Youngwood Group logo" class="logo-img" />
     </div>
   </div>
 </header>
 
 <main>
   <section>
-    <h1>Clear strategy.<br/>Tight execution.<br/>Measurable results.</h1>
+    <h1>Strategic clarity.<br/>Operational discipline.<br/>Better decisions.</h1>
     <p>
-      Youngwood Advisory partners with founders, operators, and investors to bring clarity,
-      financial rigor, and disciplined execution to high-impact decisions.
+      The Youngwood Group advises boards, founders, operators, and investors on strategy,
+      financial decision-making, and execution across complex initiatives.
     </p>
 
     <div class="features">
       <div class="feature">
         <strong>Strategic Advisory</strong>
-        <p>Business strategy, positioning, and prioritization.</p>
+        <p>Business strategy, positioning, and prioritization to align direction with resources and objectives.</p>
       </div>
       <div class="feature">
         <strong>Financial Modeling</strong>
-        <p>Forecasting, scenario analysis, and KPI design.</p>
+        <p>Forecasting, scenario analysis, and KPI design to support planning and capital allocation.</p>
       </div>
       <div class="feature">
         <strong>Execution Support</strong>
-        <p>Operating cadence, accountability, and delivery.</p>
+        <p>Supporting leadership teams in turning strategy into action through clear accountability and follow-through.</p>
+      </div>
+      <div class="feature">
+        <strong>Independent Guidance</strong>
+        <p>Informed perspective for boards and leadership teams on governance, performance, and critical strategic decisions.</p>
       </div>
     </div>
   </section>
 
   <aside class="card" id="contact">
     <div class="card-header">
-      <strong>Start an inquiry</strong>
+      <strong>Request a discussion</strong>
       <p>We’ll respond promptly.</p>
     </div>
 
@@ -207,13 +226,13 @@
       <input type="email" name="email" placeholder="Email address" required />
       <input type="text" name="company" placeholder="Company (optional)" />
       <textarea name="message" placeholder="How can we help?" required></textarea>
-      <button type="submit">Send Inquiry</button>
+      <button type="submit">Submit</button>
     </form>
   </aside>
 </main>
 
 <footer>
-  <div>© <span id="year"></span> Youngwood Advisory</div>
+  <div>© <span id="year"></span> Youngwood Advisory LLC</div>
   <div>Confidential • Independent • Advisory</div>
 </footer>
 
