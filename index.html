@@ -9,7 +9,7 @@
   <meta name="description" content="The Youngwood Group advises boards, founders, operators, and investors on strategy, financial decision-making, and execution." />
   <link rel="canonical" href="https://youngwoodgroup.com/" />
 
-  <!-- Open Graph (LinkedIn / iMessage / Slack) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="The Youngwood Group | Strategic Advisory" />
   <meta property="og:description" content="The Youngwood Group advises boards, founders, operators, and investors on strategy, financial decision-making, and execution." />
   <meta property="og:type" content="website" />
@@ -36,7 +36,6 @@
       --max: 1100px;
       --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 
-      /* Logo height (keeps full logo visible) */
       --logoH: 72px;
     }
 
@@ -63,29 +62,21 @@
     .nav {
       max-width: var(--max);
       margin: auto;
-      padding: 18px 18px;
+      padding: 18px;
       display: flex;
       align-items: center;
       min-height: calc(var(--logoH) + 36px);
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    /* Keep aspect ratio. No cropping. */
     .logo-img {
       height: var(--logoH);
       width: auto;
-      max-height: var(--logoH);
       display: block;
     }
 
     @media (max-width: 900px) {
       :root { --logoH: 60px; }
       main { grid-template-columns: 1fr !important; }
-      .nav { min-height: calc(var(--logoH) + 28px); }
     }
 
     main {
@@ -181,9 +172,7 @@
 
 <header>
   <div class="nav">
-    <div class="logo">
-      <img src="logo.png" alt="The Youngwood Group logo" class="logo-img" />
-    </div>
+    <img src="logo.png" alt="The Youngwood Group logo" class="logo-img" />
   </div>
 </header>
 
@@ -200,17 +189,20 @@
         <strong>Strategic Advisory</strong>
         <p>Business strategy, positioning, and prioritization to align direction with resources and objectives.</p>
       </div>
+
+      <div class="feature">
+        <strong>Independent Guidance</strong>
+        <p>Informed perspective for boards and leadership teams on governance, performance, and critical strategic decisions.</p>
+      </div>
+
       <div class="feature">
         <strong>Financial Modeling</strong>
         <p>Forecasting, scenario analysis, and KPI design to support planning and capital allocation.</p>
       </div>
+
       <div class="feature">
         <strong>Execution Support</strong>
         <p>Supporting leadership teams in turning strategy into action through clear accountability and follow-through.</p>
-      </div>
-      <div class="feature">
-        <strong>Independent Guidance</strong>
-        <p>Informed perspective for boards and leadership teams on governance, performance, and critical strategic decisions.</p>
       </div>
     </div>
   </section>
